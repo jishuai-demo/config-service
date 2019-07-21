@@ -15,6 +15,21 @@ spring:
 server:
   port: 8001
 
+mybatis:
+  #Mapper对应的xml路径
+  mapper-locations: classpath*:mappers/**/*.xml
+  #实体类所在的包路径
+  type-aliases-package: classpath*:com/**/entity
+
+
+
+#打印出sql
+logging:
+  level:
+    com:
+      user:
+        dao: DEBUG
+
 eureka:
   instance:
     #给当前工程起个别名，方便在Eureka界面中查看
@@ -37,6 +52,22 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 server:
   port: 8002
+  
+mybatis:
+  #Mapper对应的xml路径
+  mapper-locations: classpath*:mappers/**/*.xml
+  #实体类所在的包路径
+  type-aliases-package: classpath*:com/**/entity
+
+
+
+#打印出sql
+logging:
+  level:
+    com:
+      user:
+        dao: DEBUG
+		
 eureka:
   instance:
     #给当前工程起个别名，方便在Eureka界面中查看
