@@ -1,25 +1,19 @@
 ﻿spring:
   profiles:
     active:
-    - user-dev
-		
+    - user-dev	
 ---
-	
 spring:
   profiles: user-dev #user的开发环境
   application:
-    name: provider-8001
-
+    name: provider-800
   datasource:
     url: jdbc:mysql://localhost:3306/zmt_bc?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false&nullCatalogMeansCurrent=true
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-
 server:
   port: 8001
-
 
 eureka:
   instance:
@@ -31,27 +25,18 @@ eureka:
     service-url:
       #Eureka客户端和服务端交互地址，也就是注册地址
       defaultZone: http://localhost:7001/eureka/
-	  
-	
-
 ---
-	
 spring:
   profiles: user-test #user的测试环境
   application:
     name: provider-8002
-
   datasource:
     url: jdbc:mysql://localhost:3306/zmt_meetao?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false&nullCatalogMeansCurrent=true
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-
 server:
   port: 8002
-
-
 eureka:
   instance:
     #给当前工程起个别名，方便在Eureka界面中查看
@@ -62,4 +47,3 @@ eureka:
     service-url:
       #Eureka客户端和服务端交互地址，也就是注册地址
       defaultZone: http://localhost:7001/eureka/
-
