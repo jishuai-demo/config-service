@@ -1,12 +1,12 @@
 ﻿spring:
   profiles:
     active:
-    - user-dev	
+    - dev	
 ---
 spring:
-  profiles: user-dev #user的开发环境
+  profiles: dev #user的开发环境
   application:
-    name: provider-800
+    name: provider-8001
   datasource:
     url: jdbc:mysql://localhost:3306/zmt_bc?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false&nullCatalogMeansCurrent=true
     username: root
@@ -27,7 +27,7 @@ eureka:
       defaultZone: http://localhost:7001/eureka/
 ---
 spring:
-  profiles: user-test #user的测试环境
+  profiles: test #user的测试环境
   application:
     name: provider-8002
   datasource:
